@@ -6,6 +6,10 @@
 
 (add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
 
+;; enable rainbow-delimiters
+(require 'rainbow-delimiters)
+(add-hook `go-mode-hook `rainbow-delimiters-mode)
+
 (setenv "GOPATH" "/Users/kpurdon/projects/gocode")
 
 ;; run gofmt on save

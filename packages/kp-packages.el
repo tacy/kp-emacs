@@ -34,6 +34,7 @@
     pbcopy
     puppet-mode
     py-autopep8
+    rainbow-delimiters
     rubocop
     sass-mode
     sql-indent
