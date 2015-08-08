@@ -12,7 +12,10 @@ Emacs configuration for [Emacs for MacOSX](http://emacsformacosx.com/)
 
 #### Install Golang Dependencies
 
+Golang currently expects `/usr/local/go/bin/go` and a GOPATH of `/Users/kpurdon/projects/gocode`. These are configurable in `dev/kp-dev-go.el`.
+
 * `go get -u github.com/nsf/gocode`
+* `go get -u github.com/rogpeppe/godef`
 
 #### Install Ruby Dependencies
 
