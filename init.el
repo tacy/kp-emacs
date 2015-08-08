@@ -16,7 +16,7 @@
 (let ((default-directory "~/.emacs.d/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-(setq default-directory "/bitly" )
+(setq default-directory "/bitly/src/github/bitly" )
 
 (require 'kp-packages)
 (require 'kp-ui)
