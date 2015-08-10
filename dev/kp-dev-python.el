@@ -5,7 +5,7 @@
 (elpy-enable)
 
 (require 'py-autopep8)
-(setq py-autopep8-options '("--in-place --pep8-passes 2000 --ignore=E501,W690,W391,W293"))
+(setq py-autopep8-options '("--ignore=E501,W690,W391,W293"))
 (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
 ;; enable rainbow-delimiters
