@@ -10,7 +10,7 @@
 
 ;; enable rainbow-delimiters
 (require 'rainbow-delimiters)
-(add-hook `go-mode-hook `rainbow-delimiters-mode)
+(add-hook `python-mode-hook `rainbow-delimiters-mode)
 
 ;; use flycheck not flymake
 (when (require 'flycheck nil t)
