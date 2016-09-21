@@ -34,18 +34,22 @@
     pbcopy
     puppet-mode
     py-autopep8
+    company-jedi
     rainbow-delimiters
     rubocop
     sass-mode
     sql-indent
     web-mode
-    yaml-mode))
+    yaml-mode
+    php-mode
+    simpleclip))
 
 
 (mapc #'(lambda (package)
 	  (unless (package-installed-p package)
 	    (package-install package)))
       myPackages)
+
 
 (provide 'kp-packages)
 
