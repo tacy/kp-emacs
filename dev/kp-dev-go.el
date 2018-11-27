@@ -27,22 +27,32 @@
 ;; )
 
 
+;; (if (eq system-type 'darwin)
+;;     (progn
+;;        (load-file "/Users/tacy/workspace/go/go-tools/src/golang.org/x/tools/cmd/guru/go-guru.el")
+;;        (setq exec-path (cons "/Users/tacy/workspace/go/go-tools/bin" exec-path))
+;;        ;;(add-to-list 'exec-path "/Users/tacy/workspace/go/kubernetes/bin")
+;;      )
+;;      (progn
+;;        (load-file "/home/tacy/workspace/go/go-tools/src/golang.org/x/tools/cmd/guru/go-guru.el")
+;;        (setq exec-path (cons "/home/tacy/workspace/go/go-tools/bin" exec-path))
+;;        (setenv "PATH" (concat "/home/tacy/workspace/go/go-tools/bin:" (getenv "PATH")))
+;;        ;;(add-to-list 'exec-path "/home/tacy/workspace/go/kubernetes/bin")
+;;      )
+;; )
+
 (if (eq system-type 'darwin)
     (progn
-       (load-file "/Users/tacy/workspace/go/go-tools/src/golang.org/x/tools/cmd/guru/go-guru.el")
        (setq exec-path (cons "/Users/tacy/workspace/go/go-tools/bin" exec-path))
        ;;(add-to-list 'exec-path "/Users/tacy/workspace/go/kubernetes/bin")
      )
      (progn
-       (load-file "/home/tacy/workspace/go/go-tools/src/golang.org/x/tools/cmd/guru/go-guru.el")
        (setq exec-path (cons "/home/tacy/workspace/go/go-tools/bin" exec-path))
        (setenv "PATH" (concat "/home/tacy/workspace/go/go-tools/bin:" (getenv "PATH")))
        ;;(add-to-list 'exec-path "/home/tacy/workspace/go/kubernetes/bin")
      )
 )
 
-(go-guru-hl-identifier-mode)
-(add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
 
 ;; run gofmt on save
 (add-hook 'before-save-hook 'gofmt-before-save)
@@ -67,7 +77,23 @@
                           )
           )
 
-(require 'go-mode)
+(go-guru-hl-identifier-mode)
+(add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
+
+;; folding text
+(add-hook 'go-mode-hook 'origami-mode)
+
+(defun origami-mode-config ()
+  "For use in `origami-mode-hook'."
+  ;;(local-set-key (kbd "<C-right>") 'sgml-skip-tag-forward) ; add a key
+  ;;(local-set-key (kbd "C-c C-p") nil) ; example of remove a key
+  ;; (local-set-key (kbd "TAB") 'origami-recursively-toggle-node)
+  ;; (local-set-key (kbd "M-TAB") 'origami-toggle-all-nodes)
+  ;; more here
+  )
+
+;; add to hook
+(add-hook 'origami-mode-hook 'origami-mode-config)
 
 (provide 'kp-dev-go)
 

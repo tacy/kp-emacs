@@ -13,15 +13,23 @@
 
 ;;; Code:
 
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (let ((default-directory "~/.emacs.d/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-(setq default-directory "~/workspace/" )
+;; (setq default-directory "~/workspace/" )
 
 (require 'kp-packages)
 (require 'kp-ui)
-(require 'kp-kbd)
 (require 'kp-dev)
+
+(require 'helm-config)
+(helm-mode 1)
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))(when (memq window-system '(mac ns))
@@ -35,15 +43,11 @@
       `((".*" ,temporary-file-directory t)))
 
 (set-clipboard-coding-system 'utf-8)
-(require 'multiple-cursors)
-(require 'simpleclip)
-(require 'php-mode)
 (simpleclip-mode 1)
 
 ;; (add-hook 'after-init-hook 'global-company-mode)
 ;; (add-to-list 'company-backends 'company-yasnippet)
 
-(require 'pbcopy)
 (turn-on-pbcopy)
 
 (setq elpy-rpc-backend "jedi")  ;; set elpy rpc backend to jedi
@@ -75,4 +79,26 @@
       (select-window first-win)
       (if this-win-2nd (other-window 1))))))
 
-(global-set-key (kbd "C-x |") 'toggle-window-split)
+;; fix emacs shell cursor jump to middle of screen, refer:
+;; http://askubuntu.com/questions/204392/emacs-shell-mode-pointer-always-goes-to-middle
+(remove-hook 'comint-output-filter-functions
+             'comint-postoutput-scroll-to-bottom)
+
+(require 'kp-kbd)
+
+(setq confirm-kill-emacs 'y-or-n-p) ;exit emacs confirm
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (company jedi-core web-mode swiper sql-indent simpleclip pbcopy magit jekyll-modes go-guru go-dlv flycheck-color-mode-line exec-path-from-shell elpy ein dockerfile-mode company-jedi company-go better-defaults ac-js2))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

@@ -1,0 +1,6 @@
+;; -*- emacs-lisp -*- <17/02/21 17:51:02 /home/tacy/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["sudo" "root" "tacyArch" nil nil]
+  nil))

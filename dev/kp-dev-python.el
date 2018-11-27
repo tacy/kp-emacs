@@ -32,6 +32,14 @@
                                    '(company-jedi company-yasnippet))
                           (company-mode)))
 
+;; autoformat code with save
+(defun py-formatcode-enable-on-save ()
+  "Pre-save hook to be used before running yapf."
+  (interactive)
+  (add-hook 'before-save-hook 'elpy-format-code nil t))
+(add-hook 'python-mode-hook 'py-formatcode-enable-on-save)
+
+
 (provide 'kp-dev-python)
 
 ;;; kp-dev-python.el ends here

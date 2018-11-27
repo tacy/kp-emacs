@@ -1,0 +1,35 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("proxy.go"
+ (filename . "~/workspace/go/kubernetes/src/k8s.io/kubernetes/cmd/kube-proxy/proxy.go")
+ (front-context-string . "/*\nCopyright 201")
+ (rear-context-string)
+ (position . 1))
+("ymatou.py"
+ (filename . "~/tacy-osx/workspace/python/lele/ymatou/ymatou.py")
+ (front-context-string . "# -*- coding: ut")
+ (rear-context-string)
+ (position . 1))
+("Archlinux.md"
+ (filename . "~/tacy-osx/myblog/md/Archlinux.md")
+ (front-context-string . "# kernel #\n启动加载模")
+ (rear-context-string)
+ (position . 1))
+("apiserver.go"
+ (filename . "~/workspace/go/kubernetes/src/k8s.io/kubernetes/cmd/kube-apiserver/apiserver.go")
+ (front-context-string . "/*\nCopyright 201")
+ (rear-context-string)
+ (position . 1))
+("agent_main.go"
+ (filename . "~/workspace/go/mygo/src/travelsky.com/agent/main.go")
+ (front-context-string . "// Copyright © 2")
+ (rear-context-string)
+ (position . 1))
+("rbd"
+ (filename . "~/workspace/go/kubernetes/src/k8s.io/kubernetes/pkg/volume/rbd/rbd.go")
+ (front-context-string . "/*\nCopyright 201")
+ (rear-context-string)
+ (position . 1))
+)

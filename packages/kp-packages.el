@@ -23,9 +23,18 @@
     flycheck
     flycheck-color-mode-line
     go-mode
+    go-guru
+    go-dlv
     company-go
+    async
+    helm
+    helm-ls-git
+    wgrep-helm
     jekyll-modes
     js2-mode
+    indium
+    prettier-js
+    web-beautify
     magit
     markdown-mode
     material-theme
